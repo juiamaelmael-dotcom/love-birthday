@@ -1,0 +1,18 @@
+(function(){const L=window.Love=window.Love||{};const $=s=>document.querySelector(s);
+L.timers=[];L.later=(f,ms)=>{L.timers.push(setTimeout(f,ms))};
+let busy=false,wished=false;
+L.openGift=function(){if(busy)return;busy=true;const g=$('#gift');$('#openBtn').classList.add('gone');g.classList.add('shake');
+L.later(()=>{g.classList.remove('shake');g.classList.add('untie')},1100);
+L.later(()=>{g.classList.add('open');L.confetti(150);L.burstHearts(g,14)},1800);
+L.later(()=>L.show('s2'),3700)};
+L.wish=function(){if(wished)return;wished=true;$('#wishBtn').classList.add('gone');$('#cake').classList.add('out');L.burstHearts($('#cake'),10);
+L.later(()=>{$('#wishMsg').classList.add('on');L.confetti(170)},700)};
+L.openLetter=function(){$('#openLetter').classList.add('gone');$('#env').classList.add('open');
+L.later(()=>{$('#letter').classList.add('on');L.burstHearts($('#letterCard'),12)},1300)};
+L.closeLetter=function(){$('#letter').classList.remove('on');$('#env').classList.remove('open');$('#openLetter').classList.remove('gone')};
+L.celebrate=function(){$('#celebrateBtn').classList.add('gone');L.finale();$('#fin1').classList.add('on');L.later(()=>$('#fin2').classList.add('on'),2000)};
+L.resetInteractions=function(){busy=wished=false;L.timers.forEach(clearTimeout);L.timers=[];L.stopFx();
+$('#gift').className='gift';$('#openBtn').classList.remove('gone');$('#cake').classList.remove('out');
+$('#wishMsg').classList.remove('on');$('#wishBtn').classList.remove('gone');L.closeLetter();
+$('#celebrateBtn').classList.remove('gone');$('#fin1').classList.remove('on');$('#fin2').classList.remove('on')};
+})();

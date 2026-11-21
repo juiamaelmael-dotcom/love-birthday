@@ -1,0 +1,16 @@
+(function(){const L=window.Love=window.Love||{};
+L.RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const sym=['💗','🌸','✨','🫧','💖','⭐','🌷'];
+L.spawnDecor=function(){const box=document.getElementById('decor');box.textContent='';
+const n=innerWidth<600?14:24;
+for(let i=0;i<n;i++){const e=document.createElement('span');e.className='d '+(i%3?'rise':'fall');e.textContent=sym[i%sym.length];
+e.style.cssText='left:'+Math.random()*100+'%;font-size:'+(10+Math.random()*18)+'px;animation-duration:'+(9+Math.random()*10)+'s;animation-delay:-'+Math.random()*12+'s';
+box.appendChild(e);}};
+L.staggerText=function(el,txt){el.textContent='';let k=0;
+txt.split(' ').forEach(word=>{const w=document.createElement('span');w.className='w';
+[...word].forEach(ch=>{const c=document.createElement('span');c.className='c';c.textContent=ch;c.style.animationDelay=(k++*70)+'ms';w.appendChild(c)});el.appendChild(w)})};
+L.burstHearts=function(el,n){n=n||8;const r=el.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;
+for(let i=0;i<n;i++){const h=document.createElement('span');h.className='bh';h.textContent=i%2?'💗':'💖';
+h.style.cssText='left:'+cx+'px;top:'+cy+'px;--dx:'+(Math.random()-.5)*240+'px;--dy:'+(-60-Math.random()*170)+'px';
+document.body.appendChild(h);setTimeout(()=>h.remove(),1600)}};
+})();

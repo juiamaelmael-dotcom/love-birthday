@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>A Birthday Surprise for Love 💗</title>
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/animations.css"><link rel="stylesheet" href="css/responsive.css">
+</head><body>
+<div id="decor" aria-hidden="true"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<header class="bar">
+<button id="musicBtn" aria-label="Play or pause music" aria-pressed="false"><span class="eq"><i></i><i></i><i></i></span>🎵</button>
+<input id="vol" type="range" min="0" max="1" step="0.05" value="0.5" aria-label="Volume">
+<button id="replayBtn" aria-label="Replay experience">↻</button>
+</header>
+<div id="note" role="status"></div>
+<main>
+<section class="scene active" id="s1">
+<h1>Hey, Love! 💗</h1><p class="sub">I have something special for you...</p>
+<div class="gift" id="gift"><div class="box"></div><div class="lid"><i class="bow"></i></div></div>
+<button class="btn" id="openBtn">Open Your Surprise</button>
+</section>
+
+<section class="scene" id="s2">
+<h2 id="title" aria-label="Happy Birthday, Love!"></h2>
+<p class="msg">Today is all about you, Love. I hope your special day is filled with happiness, beautiful memories, endless smiles, and all the love you deserve.</p>
+<div class="cake" id="cake" aria-label="Birthday cake">
+<div class="candles"><b><i class="flame"></i></b><b><i class="flame"></i></b><b><i class="flame"></i></b></div>
+<div class="layer l3"><span class="berry"></span><span class="berry"></span><span class="berry"></span></div>
+<div class="layer l2"></div><div class="layer l1"></div>
+</div>
+<button class="btn" id="wishBtn">Make a Wish ✨</button>
+<p class="wishmsg" id="wishMsg">May all your beautiful wishes come true, Love! 💗</p>
+<button class="btn ghost" data-next="s3">Continue 💞</button>
+</section>
+
+<section class="scene" id="s3">
+<h2>Little Reminders 🌸</h2>
+<div class="grid">
+<figure class="card"><svg viewBox="0 0 64 64"><path d="M32 56C8 38 6 20 18 14c7-3 12 1 14 6 2-5 7-9 14-6 12 6 10 24-14 42z" fill="#ff6fa5"/></svg><figcaption>You make ordinary days special.</figcaption></figure>
+<figure class="card"><svg viewBox="0 0 64 64"><g fill="#ffb3d1"><circle cx="32" cy="16" r="10"/><circle cx="48" cy="28" r="10"/><circle cx="42" cy="47" r="10"/><circle cx="22" cy="47" r="10"/><circle cx="16" cy="28" r="10"/></g><circle cx="32" cy="34" r="8" fill="#f6d27a"/></svg><figcaption>You deserve all the happiness in the world.</figcaption></figure>
+<figure class="card"><svg viewBox="0 0 64 64"><path d="M32 6l7.6 16.4 17.9 2.1-13.3 12.2 3.6 17.7L32 45.2 16.2 54.4l3.6-17.7L6.5 24.5l17.9-2.1z" fill="#f6d27a"/></svg><figcaption>Keep shining, beautiful.</figcaption></figure>
+<figure class="card"><svg viewBox="0 0 64 64"><rect x="8" y="26" width="48" height="30" rx="4" fill="#c9a7ff"/><rect x="5" y="18" width="54" height="12" rx="4" fill="#d9c2ff"/><rect x="29" y="18" width="6" height="38" fill="#fff"/><circle cx="25" cy="13" r="6" fill="none" stroke="#fff" stroke-width="3"/><circle cx="39" cy="13" r="6" fill="none" stroke="#fff" stroke-width="3"/></svg><figcaption>A little reminder that you are loved.</figcaption></figure>
+<figure class="card"><svg viewBox="0 0 64 64"><ellipse cx="20" cy="24" rx="14" ry="12" fill="#ff9ec4"/><ellipse cx="44" cy="24" rx="14" ry="12" fill="#ff9ec4"/><ellipse cx="22" cy="44" rx="10" ry="9" fill="#d9c2ff"/><ellipse cx="42" cy="44" rx="10" ry="9" fill="#d9c2ff"/><rect x="30" y="18" width="4" height="32" rx="2" fill="#8a5a83"/></svg><figcaption>More beautiful memories await.</figcaption></figure>
+<figure class="card"><svg viewBox="0 0 64 64"><path d="M44 8a24 24 0 1 0 12 40A20 20 0 0 1 44 8z" fill="#c9a7ff"/><circle cx="50" cy="16" r="2.5" fill="#f6d27a"/><circle cx="56" cy="28" r="2" fill="#f6d27a"/><circle cx="40" cy="6" r="1.5" fill="#f6d27a"/></svg><figcaption>You make life sweeter.</figcaption></figure>
+</div>
+<button class="btn ghost" data-next="s4">Continue 💞</button>
+</section>
+
+<section class="scene" id="s4">
+<h2>A Little Letter for You 💌</h2>
+<div class="env" id="env"><div class="paper"></div><div class="front"></div><div class="flap"></div><span class="seal">💗</span></div>
+<button class="btn" id="openLetter">Open My Letter</button>
+<button class="btn ghost" data-next="s5">Continue 💞</button>
+</section>
+
+<section class="scene" id="s5">
+<button class="btn big" id="celebrateBtn">Celebrate Love! 🎉</button>
+<h2 class="fin" id="fin1">Once Again, Happy Birthday, Love! 💗</h2>
+<h2 class="fin" id="fin2">I LOVE YOU SO MUCH! 😘😘</h2>
+</section>
+</main>
+
+<div class="letter" id="letter" role="dialog" aria-modal="true" aria-label="Love letter">
+<article class="lcard" id="letterCard">
+<p class="txt">To my Love,
+
+Happy Birthday! 💗
+
+I hope today reminds you of how special and wonderful you are.
+
+I wish you happiness that never ends, dreams that slowly become reality, and countless reasons to smile.
+
+Thank you for being someone so special in my life. I hope I can continue making beautiful memories with you and giving you reasons to smile.
+
+No matter how simple this birthday surprise may be, I made it with love and sincerity.
+
+Always remember that you are appreciated, cherished, and loved.
+
+I LOVE YOU! 😘😘
+
+Happy Birthday, Love! 💗</p>
+<button class="btn" id="closeLetter">Close Letter</button>
+</article></div>
+
+<script src="js/animations.js"></script><script src="js/fireworks.js"></script>
+<script src="js/interactions.js"></script><script src="js/main.js"></script>
+</body></html>
